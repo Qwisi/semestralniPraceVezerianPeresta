@@ -10,8 +10,8 @@ namespace semestralniPraceVezerianPeresta.Model
     {
          public int IdWorker { get; }
         public string FirstName { get; set; }
-        public string SecondName{ get; set; }
-        public int HouseNumber { get; set; }
-        public int FlatNumber { get; set; }
+        public string LastName{ get; set; }
+        public string MobileNumber { get; set; }
+        public string Email { get; set; }
     }
 }
