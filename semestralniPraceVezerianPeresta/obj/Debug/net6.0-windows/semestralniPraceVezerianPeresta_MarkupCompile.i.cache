@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-U:\Pardubice\3 ROCNIK\Zimni semestr\BCSH2\SemestralniPrace\semestralniPraceVezerianPeresta\obj\Debug\net6.0-windows\
+D:\BSCH2\semestralniPraceVezerianPeresta\obj\Debug\net6.0-windows\
 semestralniPraceVezerianPeresta
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-U:\Pardubice\3 ROCNIK\Zimni semestr\BCSH2\SemestralniPrace\semestralniPraceVezerianPeresta\App.xaml
+D:\BSCH2\semestralniPraceVezerianPeresta\App.xaml
 3-1671736007
 
 19-499626142
-1941645785384
+194618410957
 MainWindow.xaml;View\SignInWindow.xaml;View\SignUpWindow.xaml;
 
 False
