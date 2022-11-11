@@ -8,5 +8,7 @@ namespace semestralniPraceVezerianPeresta.Model
 {
     internal class Services
     {
+         public int IdServices { get; }
+        public string Name { get; set; }
     }
 }
