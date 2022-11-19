@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj": {}
+    "D:\\Sem\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj": {}
   },
   "projects": {
-    "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj": {
+    "D:\\Sem\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj",
+        "projectUniqueName": "D:\\Sem\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj",
         "projectName": "semestralniPraceVezerianPeresta",
-        "projectPath": "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\obj\\",
+        "projectPath": "D:\\Sem\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Sem\\semestralniPraceVezerianPeresta\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -55,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -67,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

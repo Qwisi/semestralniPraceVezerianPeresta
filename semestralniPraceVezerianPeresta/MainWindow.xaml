@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:semestralniPraceVezerianPeresta"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <Button Content="Click" x:Name="Click"/>
-    </StackPanel>
+    <Grid>
+        <Button Height="50" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Exit" FontSize="18" FontFamily="Times new Roman" FontWeight="Bold" Click="Button_Click" Margin="604,331,0,0">
+        </Button>
+    </Grid>
 </Window>
