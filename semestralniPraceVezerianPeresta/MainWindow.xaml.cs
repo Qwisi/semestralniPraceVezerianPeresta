@@ -23,9 +23,30 @@ namespace semestralniPraceVezerianPeresta
             }
         }
 
-        private void Button_Click(object sender, EventArgs e)
+        private void Button_Exit(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void Button_Guest(object sender, EventArgs e)
+        {
+
+        }
+        private void Button_SignUp(object sender, EventArgs e)
+        {
+
+        }
+        private void Button_SignIn(object sender, EventArgs e)
+        {
+
+        }
+        private void Button_Password(object sender, EventArgs e)
+        {
+        }
+
+        private void Button_Email(object sender, EventArgs e)
+        {
+
+        }
     }
+        
 }

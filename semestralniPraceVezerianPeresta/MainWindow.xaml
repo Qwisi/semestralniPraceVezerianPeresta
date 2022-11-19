@@ -7,7 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Height="50" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Exit" FontSize="18" FontFamily="Times new Roman" FontWeight="Bold" Click="Button_Click" Margin="604,331,0,0">
+        <Button Height="50" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Exit" FontSize="18" FontFamily="Times new Roman" FontWeight="Bold" Click="Button_Exit" Margin="625,255,0,0">
         </Button>
+        <Button Height="50" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Guest" FontSize="18" FontFamily="Times new Roman" FontWeight="Bold" Click="Button_Guest" Margin="625,164,0,0">
+        </Button>
+        <Button Height="50" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Sign up" FontSize="18" FontFamily="Times new Roman" FontWeight="Bold" Click="Button_SignUp" Margin="625,74,0,0">
+        </Button>
+        <Button Height="50" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Sign in" FontSize="18" FontFamily="Times new Roman" FontWeight="Bold" Click="Button_SignIn" Margin="76,324,0,0">
+        </Button>
+        <Button Height="50" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Content="password" FontSize="18" FontFamily="Times new Roman" FontWeight="Bold" Click="Button_Password" Margin="76,236,0,0">
+        </Button>
+        <Button Height="50" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Content="email" FontSize="18" FontFamily="Times new Roman" FontWeight="Bold" Click="Button_Email" Margin="76,167,0,0">
+        </Button>
+        <TextBlock Height="50" Width="60" Margin="76,49,664,335">Login</TextBlock>
     </Grid>
 </Window>
