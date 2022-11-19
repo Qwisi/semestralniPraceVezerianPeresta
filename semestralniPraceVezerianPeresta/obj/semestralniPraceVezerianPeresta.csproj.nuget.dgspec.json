@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BSCH2\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj": {}
+    "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj": {}
   },
   "projects": {
-    "D:\\BSCH2\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj": {
+    "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSCH2\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj",
+        "projectUniqueName": "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj",
         "projectName": "semestralniPraceVezerianPeresta",
-        "projectPath": "D:\\BSCH2\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\BSCH2\\semestralniPraceVezerianPeresta\\obj\\",
+        "projectPath": "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\semestralniPraceVezerianPeresta.csproj",
+        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+        "outputPath": "U:\\Pardubice\\3 ROCNIK\\Zimni semestr\\BCSH2\\SemestralniPrace\\semestralniPraceVezerianPeresta\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -39,14 +39,23 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Oracle.ManagedDataAccess": {
+              "target": "Package",
+              "version": "[21.8.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
