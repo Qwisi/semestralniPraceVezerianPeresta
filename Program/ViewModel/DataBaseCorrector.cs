@@ -1,33 +1,30 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using Program.Model;
 
-namespace semestralniPraceVezerianPeresta.ViewModel
+namespace Program.ViewModel
 {
-    internal class DataBaseCorrector
+    public class DataBaseCorrector
     {
-        private string data_Source = "Data Source=fei-sql1.upceucebny.cz;";
-        private string initial_Catalog = "Initial Catalog=st64165;";
-        private string user_ID = "User ID=st64165;";
-        private string password = "Password=nemocnicePass";
+        private readonly string constr = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=fei-sql3.upceucebny.cz)(PORT=1521)))(CONNECT_DATA=(SID=BDAS)));" +
+                        "user id=st64533;password=skladPass;" +
+                        "Connection Timeout=120;Validate connection=true;Min Pool Size=4;";
 
-        public bool Connect()
+        private OracleConnection _con { get; set; }
+
+        public void CorrectUsers(User user)
         {
-            /*using (SqlConnection connection = new SqlConnection(data_Source + initial_Catalog + user_ID + password))
+            _con = new OracleConnection(constr);
+            _con.Open();
+            string insertSql = "INSERT INTO USERS (id_user, user_name, password) VALUES (:val1, :val2, :val3)";
+            using (OracleCommand cmd = new OracleCommand(insertSql, _con))
             {
-                connection.Open();
-            }*/
-            SqlConnection connection = new SqlConnection(data_Source + initial_Catalog + user_ID + password);
-            try
-            {
-                connection.Open();
-                connection.Close(); 
-                return true;
+                cmd.Parameters.Add(new OracleParameter(":val1", 1));
+                cmd.Parameters.Add(new OracleParameter(":val2", user.Email));
+                cmd.Parameters.Add(new OracleParameter(":val3", user.Password));
+
+                cmd.ExecuteNonQuery();
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                return false;
-            }
+            _con.Close();
         }
     }
 }

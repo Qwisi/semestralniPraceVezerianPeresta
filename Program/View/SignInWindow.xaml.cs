@@ -1,15 +1,18 @@
-﻿using System.Windows.Controls;
+﻿using Program.Model;
+using Program.ViewModel;
+using System.Windows;
 
-namespace semestralniPraceVezerianPeresta.View
+namespace Program.View
 {
     /// <summary>
     /// Interaction logic for SignInWindow.xaml
     /// </summary>
-    public partial class SignInWindow : UserControl
+    public partial class SignInWindow : Window
     {
         public SignInWindow()
         {
             InitializeComponent();
+            DataContext = new SignInViewModel(new WindowService());
         }
     }
 }
