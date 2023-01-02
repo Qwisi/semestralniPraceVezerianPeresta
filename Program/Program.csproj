@@ -198,7 +198,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="IWindowService.cs" />
+    <Compile Include="Interfaces\IMessageBoxService.cs" />
+    <Compile Include="Interfaces\IWindowService.cs" />
+    <Compile Include="MessageBoxService.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="WindowService.cs" />
     <Compile Include="ViewModel\DataBaseCorrector.cs" />

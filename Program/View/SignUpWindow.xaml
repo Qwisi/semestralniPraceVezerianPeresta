@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="SignUpWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel>
+            <StackPanel Width="400" Orientation="Vertical" Margin="0,50,400,0">
+                <Label Content="Sign Up"/>
+                <TextBox x:Name="emailTextBox" Text="{Binding User.Email}"/>
+                <TextBox x:Name="passTextBox" Text="{Binding User.Password}"/>
+                <Button x:Name="signInButton" Content="Sign In" Command="{Binding ClickSignIn}"/>
+                <Button x:Name="backButton" Content="Back" Command="{Binding ClickBack}"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

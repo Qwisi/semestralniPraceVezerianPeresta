@@ -12,7 +12,7 @@ namespace Program.View
         public SignInWindow()
         {
             InitializeComponent();
-            DataContext = new SignInViewModel(new WindowService());
+            DataContext = new SignInViewModel();
         }
     }
 }

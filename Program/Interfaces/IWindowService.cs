@@ -1,5 +1,4 @@
-﻿
-namespace Program
+﻿namespace Program.Interfaces
 {
     public  interface IWindowService
     {
