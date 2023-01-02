@@ -1,9 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Program.Interfaces;
 using Program.Model;
-using System.Net.Mail;
 using System.Windows;
-using System;
 using System.Windows.Input;
 
 namespace Program.ViewModel
@@ -13,6 +11,7 @@ namespace Program.ViewModel
         public User User { get; set; } = new User();
         public ICommand ClickSignUp { get; }
         public ICommand ClickSignIn { get; }
+        public ICommand ClickGuest { get; }
         public ICommand ClickExit { get; }
 
         private readonly IWindowService _windowService;
@@ -22,21 +21,40 @@ namespace Program.ViewModel
         {
             _windowService = new WindowService();
             _messageBoxService = new MessageBoxService();
-            ClickSignUp = new RelayCommand(OpenSignUpWindow);
-            ClickSignIn = new RelayCommand(SignIn);
-            ClickExit = new RelayCommand(Exit);
+
+            ClickSignUp = new RelayCommand(OnSignUp);
+            ClickSignIn = new RelayCommand(OnSignIn);
+            ClickExit = new RelayCommand(OnExit);
+            ClickGuest = new RelayCommand(OnGuest);
         }
 
-        private void SignIn()
+        private void OnSignIn()
         {
-            if (ValidData())
+            string exception = string.Empty;
+            if (DataChecker.ValidEmail(User.Email, ref exception) && DataChecker.ValidPass(User.Password, ref exception))
             {
                 DataBaseCorrector baseCorrector = new DataBaseCorrector();
-                baseCorrector.CorrectUsers(User);
+                bool isMeilProblem = false;
+                if (baseCorrector.UserExist(User, ref isMeilProblem)) 
+                {
+                    _windowService.OpenWindow(new DataBaseViewModel(UsersEnum.USER_REGISTERED));
+                    CloseWindow();
+                }
+                else
+                {
+                    string message = isMeilProblem ? "Email is incorrect!" : "Password is incorrect!";
+                    _messageBoxService.ShowMessageBox(message, "Message Box Title",
+                                        MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else
+            {
+                _messageBoxService.ShowMessageBox(exception, "Message Box Title",
+                                        MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
-        private void OpenSignUpWindow()
+        private void OnSignUp()
         {
             _windowService.OpenWindow(new SignUpViewModel());
             CloseWindow();
@@ -47,30 +65,15 @@ namespace Program.ViewModel
             _windowService.CloseWindow(this);
         }
 
-        private void Exit()
+        private void OnExit()
         {
             CloseWindow();
         }
 
-        private bool ValidData()
+        private void OnGuest()
         {
-            try
-            {
-                MailAddress addr = new MailAddress(User.Email);
-                if (User.Password == null || User.Password.Length < 8)
-                {
-                    _messageBoxService.ShowMessageBox("Password is less than 8 digits", "Message Box Title",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-                    return false;
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                _messageBoxService.ShowMessageBox("Email address is not correct", "Message Box Title",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            return false;
+            _windowService.OpenWindow(new DataBaseViewModel(UsersEnum.USER));
+            CloseWindow();
         }
     }
 }

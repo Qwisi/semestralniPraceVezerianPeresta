@@ -1,6 +1,6 @@
 ﻿namespace Program.Model
 {
-    enum UsersEnum
+    public enum UsersEnum
     {
         ADMIN,
         USER_REGISTERED,

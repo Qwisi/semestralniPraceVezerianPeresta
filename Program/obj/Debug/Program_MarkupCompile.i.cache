@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Pardubice\3.rocnik 2022\1_Zimni semestr\Programovani BSCH2\SEM_PRACE\Program\obj\Debug\
+U:\Pardubice\3 ROCNIK\Zimni semestr\BCSH2\semestralniParce\Program\obj\Debug\
 Program
 none
 false
 DEBUG;TRACE
-D:\Pardubice\3.rocnik 2022\1_Zimni semestr\Programovani BSCH2\SEM_PRACE\Program\App.xaml
-21572642248
+U:\Pardubice\3 ROCNIK\Zimni semestr\BCSH2\semestralniParce\Program\App.xaml
+3512846036
 
-26-1704666551
-157-1351497333
-View\SignInWindow.xaml;View\SignUpWindow.xaml;
+29-415534787
+1571097595507
+View\DataBaseWindow.xaml;View\SignInWindow.xaml;View\SignUpWindow.xaml;
 
-False
+True
 

@@ -202,6 +202,11 @@
     <Compile Include="Interfaces\IWindowService.cs" />
     <Compile Include="MessageBoxService.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="ViewModel\DataBaseViewModel.cs" />
+    <Compile Include="ViewModel\DataChecker.cs" />
+    <Compile Include="View\DataBaseWindow.xaml.cs">
+      <DependentUpon>DataBaseWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowService.cs" />
     <Compile Include="ViewModel\DataBaseCorrector.cs" />
     <Compile Include="ViewModel\SignInViewModel.cs" />
@@ -262,6 +267,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\DataBaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SignInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

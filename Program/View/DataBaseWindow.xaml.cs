@@ -4,14 +4,13 @@ using System.Windows;
 namespace Program.View
 {
     /// <summary>
-    /// Interaction logic for SignInWindow.xaml
+    /// Interaction logic for DataBaseWindow.xaml
     /// </summary>
-    public partial class SignInWindow : Window
+    public partial class DataBaseWindow : Window
     {
-        public SignInWindow()
+        public DataBaseWindow()
         {
             InitializeComponent();
-            DataContext = new SignInViewModel();
         }
     }
 }

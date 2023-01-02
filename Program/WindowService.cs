@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 
-namespace Program.Model
+namespace Program
 {
     public class WindowService : IWindowService
     {
