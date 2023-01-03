@@ -7,16 +7,22 @@
         mc:Ignorable="d"
         Title="SignInWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            <StackPanel Width="400" Orientation="Vertical" Margin="0,50,400,0">
-                <Label Content="Login"/>
-                <TextBox x:Name="emailTextBox" Text="{Binding User.Email}"/>
-                <TextBox x:Name="passTextBox" Text="{Binding User.Password}"/>
-                <Button x:Name="signInButton" Content="Sign In" Command="{Binding ClickSignIn}"/>
-                <Button x:Name="signUpButton" Content="Sign Up" Command="{Binding ClickSignUp}"/>
-                <Button x:Name="guest" Content="Guest" Command="{Binding ClickGuest}"/>
-                <Button x:Name="exit" Content="Exit" Command="{Binding ClickExit}"/>
-            </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+            <Label  Content="Login"/>
+            <TextBox  x:Name="emailTextBox" Text="{Binding User.Email}"/>
+            <TextBox  x:Name="passTextBox" Text="{Binding User.Password}"/>
+            <Button   x:Name="signInButton" Content="Sign In" Command="{Binding ClickSignIn}"/>
         </StackPanel>
+
+        <StackPanel VerticalAlignment="Center" Grid.Column="1">
+            <Button x:Name="signUpButton" Content="Sign Up" Command="{Binding ClickSignUp}" Width="400"/>
+            <Button x:Name="guest" Content="Guest" Command="{Binding ClickGuest}"/>
+            <Button x:Name="exit" Content="Exit" Command="{Binding ClickExit}" RenderTransformOrigin="0.648,1.155" Height="25"/>
+        </StackPanel>
+
     </Grid>
 </Window>

@@ -3,13 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="Program.ViewModel"
         xmlns:local="clr-namespace:Program.View"
-        DataContext="ViewModel/DataBaseViewModel.cs"
+        DataContext="vm:DataBaseViewModel.cs"
         mc:Ignorable="d"
         Title="DataBaseWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding ClickBack}"/>
-        <Label Content="{Binding UserType}" HorizontalAlignment="Center" Margin="0,166,0,0" VerticalAlignment="Top"/>
+    <Grid Margin="0,91,0,0">
+        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding ClickBack}" Margin="762,-79,0,0"/>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" ItemsSource="{Binding DataTable}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="11,-79,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding SelectedComboBoxItem}">
+            <ComboBoxItem>ADDRESS</ComboBoxItem>
+            <ComboBoxItem>CARD</ComboBoxItem>
+            <ComboBoxItem>CASH</ComboBoxItem>
+            <ComboBoxItem>GOODS</ComboBoxItem>
+            <ComboBoxItem>INSURANCE</ComboBoxItem>
+            <ComboBoxItem>CLIENT</ComboBoxItem>
+            <ComboBoxItem>PAYMENT</ComboBoxItem>
+            <ComboBoxItem>STORAGE</ComboBoxItem>
+            <ComboBoxItem>USER</ComboBoxItem>
+            <ComboBoxItem>WORKER</ComboBoxItem>
+            <ComboBoxItem>WORK_POSITION</ComboBoxItem>
+        </ComboBox>
+        <Button Content="Show" Command="{Binding ClickShowTable}" HorizontalAlignment="Left" Margin="151,-77,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

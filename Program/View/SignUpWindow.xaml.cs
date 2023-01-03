@@ -14,5 +14,10 @@ namespace Program.View
             InitializeComponent();
             DataContext = new SignUpViewModel();
         }
+
+        private void colorButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -234,3 +234,5 @@ U:\Pardubice\3 ROCNIK\Zimni semestr\BCSH2\semestralniParce\Program\obj\Debug\Pro
 U:\Pardubice\3 ROCNIK\Zimni semestr\BCSH2\semestralniParce\Program\obj\Debug\Program.pdb
 U:\Pardubice\3 ROCNIK\Zimni semestr\BCSH2\semestralniParce\Program\obj\Debug\View\DataBaseWindow.g.cs
 U:\Pardubice\3 ROCNIK\Zimni semestr\BCSH2\semestralniParce\Program\obj\Debug\View\DataBaseWindow.baml
+D:\Pardubice\3.rocnik 2022\1_Zimni semestr\Programovani BSCH2\SEM_PRACE\Program\obj\Debug\View\DataBaseWindow.g.cs
+D:\Pardubice\3.rocnik 2022\1_Zimni semestr\Programovani BSCH2\SEM_PRACE\Program\obj\Debug\View\DataBaseWindow.baml

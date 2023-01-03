@@ -30,7 +30,7 @@ namespace Program.ViewModel
             if (DataChecker.ValidEmail(User.Email, ref exception) && DataChecker.ValidPass(User.Password, ref exception))
             {
                 DataBaseCorrector baseCorrector = new DataBaseCorrector();
-                if (baseCorrector.LineInTableExist("Users", "user_name", User.Email))
+                if (baseCorrector.LineInTableExist(TablesEnum.USER, "user_name", User.Email))
                 {
                     _messageBoxService.ShowMessageBox("User already exist", "Message Box Title",
                                         MessageBoxButton.OK, MessageBoxImage.Information);

@@ -201,6 +201,9 @@
     <Compile Include="Interfaces\IMessageBoxService.cs" />
     <Compile Include="Interfaces\IWindowService.cs" />
     <Compile Include="MessageBoxService.cs" />
+    <Compile Include="Model\Goods.cs" />
+    <Compile Include="Model\SomeTable.cs" />
+    <Compile Include="Model\TablesEnum.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\DataBaseViewModel.cs" />
     <Compile Include="ViewModel\DataChecker.cs" />
@@ -226,7 +229,6 @@
     <Compile Include="Model\Adress.cs" />
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\Cash.cs" />
-    <Compile Include="Model\Good.cs" />
     <Compile Include="Model\Insurance.cs" />
     <Compile Include="Model\Klient.cs" />
     <Compile Include="Model\Payment.cs" />
