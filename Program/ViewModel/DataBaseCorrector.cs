@@ -18,7 +18,7 @@ namespace Program.ViewModel
             string insertSql = "INSERT INTO USERS (id_user, user_name, password) VALUES (:val1, :val2, :val3)";
             using (OracleCommand cmd = new OracleCommand(insertSql, _con))
             {
-                cmd.Parameters.Add(new OracleParameter(":val1", 3));
+                cmd.Parameters.Add(new OracleParameter(":val1", 1));
                 cmd.Parameters.Add(new OracleParameter(":val2", user.Email));
                 cmd.Parameters.Add(new OracleParameter(":val3", user.Password));
 
@@ -29,52 +29,30 @@ namespace Program.ViewModel
 
         public bool UserExist(User user, ref bool isMeilProblem)
         {
-            _con = new OracleConnection(constr);
-            _con.Open();
-            string selectSql = "SELECT 1 FROM USERS WHERE user_name = :email";
-            using (OracleCommand cmd = new OracleCommand(selectSql, _con))
+            if(LineInTableExist("Users", "user_name", user.Email))
             {
-                cmd.Parameters.Add(new OracleParameter(":user_name", user.Email));
-
-                object result = cmd.ExecuteScalar();
-
-                if (result != null)
-                {
-                    // Email exists, check password
-                    selectSql = "SELECT 1 FROM USERS WHERE user_name = :user_name AND password = :password";
-
-                    cmd.CommandText = selectSql;
-                    cmd.Parameters.Add(new OracleParameter(":user_name", user.Password));
-
-                    result = cmd.ExecuteScalar();
-
-                    _con.Close();
-                    return result != null;
-                }
-                else
-                {
-                    _con.Close();
-                    isMeilProblem = true;
-                    return false;
-                }
-
+                return LineInTableExist("Users", "password", user.Password);
+            }
+            else
+            {
+                isMeilProblem = true;
+                return false;
             }
         }
 
-        /*public bool DoesLineInTableExist(string line)
+        public bool LineInTableExist(string table, string attribute, string line)
         {
             _con = new OracleConnection(constr);
-            _con.Open();ф
-            string insertSql = $"SELECT 1 FROM Table WHERE {line} = :{line}";
+            _con.Open(); 
+            string insertSql = $"SELECT 1 FROM {table.ToUpper()} WHERE {attribute} = :{attribute}";
             using (OracleCommand cmd = new OracleCommand(insertSql, _con))
             {
-                cmd.Parameters.Add(new OracleParameter($":{line}", line));
+                cmd.Parameters.Add(new OracleParameter($":{attribute}", line));
 
                 object result = cmd.ExecuteScalar();
                 _con.Close();
                 return result != null;
             }
-
-        }*/
+        }
     }
 }
