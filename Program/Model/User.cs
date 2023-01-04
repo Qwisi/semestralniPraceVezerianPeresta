@@ -1,6 +1,6 @@
 ﻿namespace Program.Model
 {
-    public class User
+    public class User : SomeTable
     {
         /*private UsersEnum _userType;
         public UsersEnum UserType
@@ -22,6 +22,14 @@
             get => _password;
             set {  _password = value; }
         }
+
+        public User(string email, string password)
+        {
+            _email = email;
+            _password = password;
+        }
+
+        public User() { }
 
     }
 }

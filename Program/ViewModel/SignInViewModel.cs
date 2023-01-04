@@ -8,7 +8,7 @@ namespace Program.ViewModel
 {
     public class SignInViewModel
     {
-        public User User { get; set; } = new User();
+        public User User { get; set; }
         public ICommand ClickSignUp { get; }
         public ICommand ClickSignIn { get; }
         public ICommand ClickGuest { get; }
@@ -22,10 +22,12 @@ namespace Program.ViewModel
             _windowService = new WindowService();
             _messageBoxService = new MessageBoxService();
 
+            
             ClickSignUp = new RelayCommand(OnSignUp);
             ClickSignIn = new RelayCommand(OnSignIn);
             ClickExit = new RelayCommand(OnExit);
             ClickGuest = new RelayCommand(OnGuest);
+            User = new User("some@mail.com", "password");
         }
 
         private void OnSignIn()

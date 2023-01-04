@@ -12,6 +12,12 @@ namespace Program.ViewModel
         private readonly IMessageBoxService _messageBoxService;
         public User User { get; set; }
 
+        private string _confirmPassword;
+        public string ConfirmPassword
+        {
+            get { return _confirmPassword; }
+            set { _confirmPassword = value; }
+        }
         public ICommand ClickSignUp { get; }
         public ICommand ClickBack { get; }
 
@@ -21,13 +27,16 @@ namespace Program.ViewModel
 
             ClickSignUp = new RelayCommand(OnSignUp);
             ClickBack = new RelayCommand(OnBack);
-            User = new User();
+            User = new User("some@mail.com", "password");
+            ConfirmPassword = "confirm password";
         }
 
         private void OnSignUp()
         {
             string exception = string.Empty;
-            if (DataChecker.ValidEmail(User.Email, ref exception) && DataChecker.ValidPass(User.Password, ref exception))
+            if (DataChecker.ValidEmail(User.Email, ref exception) 
+                && DataChecker.ValidPass(User.Password, ref exception) 
+                && DataChecker.CheckPasswordEquals(User.Password, _confirmPassword, ref exception))
             {
                 DataBaseCorrector baseCorrector = new DataBaseCorrector();
                 if (baseCorrector.LineInTableExist(TablesEnum.USER, "user_name", User.Email))

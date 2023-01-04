@@ -1,8 +1,17 @@
 ﻿namespace Program.Model
 {
-    public abstract class Payment
+    public class Payment : SomeTable
     {
-        public int IdPayment { get; }
+        private PaymentsEnum _paymentType;
+        public PaymentsEnum PaymentType
+        {
+            get => _paymentType;
+            set { _paymentType = value; }
+        }
 
+        public Payment(PaymentsEnum paymentType)
+        {
+            _paymentType = paymentType;
+        }
     }
 }

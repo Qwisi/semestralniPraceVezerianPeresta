@@ -59,46 +59,97 @@ namespace Program.ViewModel
             }
         }
 
-        public ObservableCollection<Adress> GetTable(TablesEnum table)
+        public ObservableCollection<Goods> GetTable(TablesEnum table)
         {
             OracleDataReader reader = GetDataReader(table);
-            ObservableCollection<Adress> someList;
+            ObservableCollection<Goods> someList = new ObservableCollection<Goods>();
             switch (table)
             {
                 case TablesEnum.ADRESS:
-                    someList = new ObservableCollection<Adress>();
-                    while (reader.Read())
+                    //someList = new ObservableCollection<Adress>();
+                    /*while (reader.Read())
                     {
                         someList.Add(new Adress(
                             reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4)));
                     }
-                    _con.Close();
+                    _con.Close();*/
                     return someList;
                 case TablesEnum.CARD:
-                    break;
-                case TablesEnum.CASH:
-                    break;
-                case TablesEnum.GOODS:
+                    //someList = new ObservableCollection<Card>();
                     /*while (reader.Read())
+                    {
+                        someList.Add(new Card(PaymentsEnum.CARD, reader.GetString(1)));
+                    }
+                    _con.Close();*/
+                    return someList;
+                case TablesEnum.GOODS:
+                    //someList = new ObservableCollection<Goods>();
+                    while (reader.Read())
                     {
                         someList.Add(new Goods(
                             reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4)));
-                    }*/
-                    break;
+                    }
+                    _con.Close();
+                    return someList;
                 case TablesEnum.INSURANCE:
-                    break;
-                case TablesEnum.KLIENT:
-                    break;
+                    //someList = new ObservableCollection<Insurance>();
+                    /*while (reader.Read())
+                    {
+                        someList.Add(new Insurance(
+                            reader.GetString(1), reader.GetString(2)));
+                    }
+                    _con.Close();*/
+                    return someList;
                 case TablesEnum.PAYMENT:
-                    break;
+                    //someList = new ObservableCollection<Payment>();
+                    /*while (reader.Read())
+                    {
+                        someList.Add(new Payment(GetStringDescription(reader.GetString(1))));
+                    }
+                    _con.Close();*/
+                    return someList;
                 case TablesEnum.STORAGE:
-                    break;
+                    //someList = new ObservableCollection<Storage>();
+                    /*while (reader.Read())
+                    {
+                        someList.Add(new Storage(reader.GetString(1), reader.GetString(2)));
+                    }
+                    _con.Close();*/
+                    return someList;
                 case TablesEnum.USER:
-                    break;
+                    //someList = new ObservableCollection<User>();
+                    /*while (reader.Read())
+                    {
+                        someList.Add(new User(reader.GetString(1), reader.GetString(2)));
+                    }
+                    _con.Close();*/
+                    return someList;
                 case TablesEnum.WORKER:
-                    break;
+                    //someList = new ObservableCollection<Worker>();
+                    /*while (reader.Read())
+                    {
+                        someList.Add(new Worker(
+                            reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4)));
+                    }
+                    _con.Close();*/
+                    return someList;
                 case TablesEnum.WORK_POSITION:
-                    break;
+                    //someList = new ObservableCollection<WorkPosition>();
+                    /*while (reader.Read())
+                    {
+                        someList.Add(new WorkPosition(reader.GetString(1), reader.GetInt32(2)));
+                    }
+                    _con.Close();*/
+                    return someList;
+                case TablesEnum.CLIENT:
+                    //someList = new ObservableCollection<Сlient>();
+                    /*while (reader.Read())
+                    {
+                        someList.Add(new Сlient(
+                            reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4)));
+                    }
+                    _con.Close();*/
+                    return someList;
             }
             return null;
         }
@@ -117,7 +168,10 @@ namespace Program.ViewModel
 
 
 
-
+        public static PaymentsEnum GetStringDescription(string value)
+        {
+            return (PaymentsEnum)Enum.Parse(typeof(PaymentsEnum), value, true);
+        }
 
         private static string GetEnumDescription(Enum value)
         {

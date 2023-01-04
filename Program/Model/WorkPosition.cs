@@ -1,9 +1,25 @@
 ﻿namespace Program.Model
 {
-    internal class WorkPosition
+    public class WorkPosition : SomeTable
     {
-        public int IdWorkPosition { get; }
-        public string JobTitle { get; set; }
-        public int HourlyWage { get; set; }
+        private string _jobTitle;
+        public string JobTitle
+        {
+            get => _jobTitle;
+            set { _jobTitle = value; }
+        }
+
+        private int _hourlyWage;
+        public int HourlyWage
+        {
+            get => _hourlyWage;
+            set { _hourlyWage = value; }
+        }
+
+        public WorkPosition(string jobTitle, int hourlyWage)
+        {
+            _jobTitle = jobTitle;
+            _hourlyWage = hourlyWage;
+        }
     }
 }

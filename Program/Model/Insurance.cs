@@ -1,10 +1,28 @@
 ﻿namespace Program.Model
 {
-    internal class Insurance
+    public class Insurance : SomeTable
     {
-        public int IdInsurances { get; }
-        public string Name { get; set; }
-        public int Amount{ get; set; }
-        public string MobileNumber { get; set; }
+
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set { _name = value; }
+        }
+
+
+        private string _phoneNumber;
+        public string PhoneNumber
+        {
+            get => _phoneNumber;
+            set { _phoneNumber = value; }
+        }
+
+        public Insurance(string name, string phoneNumber)
+        {
+            _name = name;
+            _phoneNumber = phoneNumber;
+        }
+
     }
 }

@@ -10,7 +10,7 @@ namespace Program.ViewModel
 {
     public class DataBaseViewModel : INotifyPropertyChanged
     {
-        private UsersEnum _userType = UsersEnum.USER;
+        private UsersEnum _userType;
 
         public UsersEnum UserType
         {
@@ -22,25 +22,14 @@ namespace Program.ViewModel
         public TablesEnum SelectedComboBoxItem
         {
             get { return _selectedComboBoxItem; }
-            set { _selectedComboBoxItem = value; }
+            set { 
+                _selectedComboBoxItem = value;
+                ShowTable(value);
+            }
         }
 
-        private readonly IWindowService _windowService;
-        private readonly IMessageBoxService _messageBoxService;
-
-        public ICommand ClickBack { get; }
-
-        public ICommand ClickShowTable { get; }
-
-        private ObservableCollection<Adress> _items;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public ObservableCollection<Adress> DataTable
+        private ObservableCollection<Goods> _items;
+        public ObservableCollection<Goods> Items
         {
             get { return _items; }
             set
@@ -50,28 +39,68 @@ namespace Program.ViewModel
             }
         }
 
+        private readonly IWindowService _windowService;
+        private readonly IMessageBoxService _messageBoxService;
+
+        public ICommand ClickBack { get; }
+
+        public ObservableCollection<TablesEnum> ComboBoxItems { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public DataBaseViewModel(UsersEnum userType)
         {
             _userType = userType;
 
-            SelectedComboBoxItem = TablesEnum.ADRESS;
-
-            _items = new ObservableCollection<Adress>();
+            _items = new ObservableCollection<Goods>();
             _windowService = new WindowService();
             _messageBoxService = new MessageBoxService();
             ClickBack = new RelayCommand(OnBack);
-            ClickShowTable = new RelayCommand(OnShowTable);
+
+            InitializeComboBox();
         }
 
-        public DataBaseViewModel()
+        private void InitializeComboBox()
         {
+            if (_userType == UsersEnum.USER)
+            {
+                ComboBoxItems = new ObservableCollection<TablesEnum>
+                {
+                    TablesEnum.GOODS,
+                    TablesEnum.STORAGE
+                };
+            }
+            if (_userType == UsersEnum.USER_REGISTERED)
+            {
+                ComboBoxItems = new ObservableCollection<TablesEnum>
+                {
+                    TablesEnum.ADRESS,
+                    TablesEnum.GOODS,
+                    TablesEnum.CLIENT,
+                    TablesEnum.STORAGE,
+                };
+            }
+            if (_userType == UsersEnum.ADMIN)
+            {
+                ComboBoxItems = new ObservableCollection<TablesEnum>
+                {
+                    TablesEnum.ADRESS,
+                    TablesEnum.CARD,
+                    TablesEnum.CASH,
+                    TablesEnum.GOODS,
+                    TablesEnum.INSURANCE,
+                    TablesEnum.CLIENT,
+                    TablesEnum.PAYMENT,
+                    TablesEnum.STORAGE,
+                    TablesEnum.USER,
+                    TablesEnum.WORKER,
+                };
+            }
             SelectedComboBoxItem = TablesEnum.GOODS;
-
-            _items = new ObservableCollection<Adress>();
-            _windowService = new WindowService();
-            _messageBoxService = new MessageBoxService();
-            ClickBack = new RelayCommand(OnBack);
-            ClickShowTable = new RelayCommand(OnShowTable);
         }
 
         private void OnBack()
@@ -85,12 +114,11 @@ namespace Program.ViewModel
             _windowService.CloseWindow(this);
         }
 
-        private void OnShowTable()
+        private void ShowTable(TablesEnum table)
         {
             DataBaseCorrector dataBaseCorrector = new DataBaseCorrector();
-            _items.Clear();
-            _items = dataBaseCorrector.GetTable(_selectedComboBoxItem);
-            OnPropertyChanged("DataTable");
+            _items?.Clear();
+            _items = dataBaseCorrector.GetTable(table);
         }
     }
 }

@@ -202,6 +202,7 @@
     <Compile Include="Interfaces\IWindowService.cs" />
     <Compile Include="MessageBoxService.cs" />
     <Compile Include="Model\Goods.cs" />
+    <Compile Include="Model\PaymentsEnum.cs" />
     <Compile Include="Model\SomeTable.cs" />
     <Compile Include="Model\TablesEnum.cs" />
     <Compile Include="Model\User.cs" />
@@ -230,7 +231,7 @@
     <Compile Include="Model\Card.cs" />
     <Compile Include="Model\Cash.cs" />
     <Compile Include="Model\Insurance.cs" />
-    <Compile Include="Model\Klient.cs" />
+    <Compile Include="Model\Сlient.cs" />
     <Compile Include="Model\Payment.cs" />
     <Compile Include="Model\Storage.cs" />
     <Compile Include="Model\UsersEnum.cs" />

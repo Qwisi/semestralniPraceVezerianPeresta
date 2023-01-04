@@ -2,6 +2,17 @@
 {
     public class Card : Payment
     {
-        public string BankName{ get; set; }
+        private string _bankName;
+
+        public Card(PaymentsEnum paymentType, string bankName) : base(paymentType)
+        {
+            _bankName = bankName;
+        }
+
+        public string BankName
+        {
+            get => _bankName;
+            set { _bankName = value; }
+        }
     }
 }

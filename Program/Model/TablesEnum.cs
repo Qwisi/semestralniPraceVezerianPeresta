@@ -17,7 +17,7 @@ namespace Program.Model
         [Description("POJISTOVNY")]
         INSURANCE,
         [Description("KLIENTI")]
-        KLIENT,
+        CLIENT,
         [Description("PLATBY")]
         PAYMENT,
         [Description("SKLADY")]

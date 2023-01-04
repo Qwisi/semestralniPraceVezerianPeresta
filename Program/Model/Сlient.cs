@@ -1,6 +1,6 @@
 ﻿namespace Program.Model
 {
-    public class Worker : SomeTable
+    public class Сlient : SomeTable
     {
         private string _firstName;
         public string FirstName
@@ -30,7 +30,7 @@
             set { _email = value; }
         }
 
-        public Worker(string firstName, string lastName, string phoneNumber, string email)
+        public Сlient(string firstName, string lastName, string phoneNumber, string email)
         {
             _firstName = firstName;
             _lastName = lastName;

@@ -9,22 +9,8 @@
         mc:Ignorable="d"
         Title="DataBaseWindow" Height="450" Width="800">
     <Grid Margin="0,91,0,0">
-        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding ClickBack}" Margin="762,-79,0,0"/>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" ItemsSource="{Binding DataTable}"/>
-        <ComboBox HorizontalAlignment="Left" Margin="11,-79,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding SelectedComboBoxItem}">
-            <ComboBoxItem>ADDRESS</ComboBoxItem>
-            <ComboBoxItem>CARD</ComboBoxItem>
-            <ComboBoxItem>CASH</ComboBoxItem>
-            <ComboBoxItem>GOODS</ComboBoxItem>
-            <ComboBoxItem>INSURANCE</ComboBoxItem>
-            <ComboBoxItem>CLIENT</ComboBoxItem>
-            <ComboBoxItem>PAYMENT</ComboBoxItem>
-            <ComboBoxItem>STORAGE</ComboBoxItem>
-            <ComboBoxItem>USER</ComboBoxItem>
-            <ComboBoxItem>WORKER</ComboBoxItem>
-            <ComboBoxItem>WORK_POSITION</ComboBoxItem>
-        </ComboBox>
-        <Button Content="Show" Command="{Binding ClickShowTable}" HorizontalAlignment="Left" Margin="151,-77,0,0" VerticalAlignment="Top"/>
-
+        <Button Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding ClickBack}" Margin="739,-77,0,0"/>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" ItemsSource="{Binding Items}"/>
+        <ComboBox HorizontalAlignment="Left" Margin="11,-79,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding ComboBoxItems}" SelectedItem="{Binding SelectedComboBoxItem}"/>
     </Grid>
 </Window>

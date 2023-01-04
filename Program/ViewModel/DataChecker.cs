@@ -25,38 +25,52 @@ namespace Program.ViewModel
             bool isValid = true;
             if (password.Length < 8)
             {
-                exception += "Password must be at least 8 characters long";
+                exception += "\nPassword must be at least 8 characters long";
                 isValid = false;
             }
 
             // Check for at least one lowercase letter
             if (!Regex.IsMatch(password, @"[a-z]"))
             {
-                exception += "Password must contain at least one lowercase letter";
+                exception += "\nPassword must contain at least one lowercase letter";
                 isValid = false;
             }
 
             // Check for at least one uppercase letter
             if (!Regex.IsMatch(password, @"[A-Z]"))
             {
-                exception += "Password must contain at least one uppercase letter";
+                exception += "\nPassword must contain at least one uppercase letter";
                 isValid = false;
             }
             /*
             // Check for at least one digit
             if (!Regex.IsMatch(password, @"[0-9]"))
             {
-                exception += "Password must contain at least one digit";
+                exception += "\nPassword must contain at least one digit";
                 isValid = false;
             }
 
             // Check for at least one special character
             if (!Regex.IsMatch(password, @"[!#$%&'*+\-/=?\^_`{|}~]"))
             {
-                exception += "Password must contain at least one special character";
+                exception += "\nPassword must contain at least one special character";
                 isValid = false;
             }*/
             return isValid;
         }
+
+        public static bool CheckPasswordEquals(string password, string confirmPassword, ref string exception)
+        {
+            if (password.Equals(confirmPassword))
+            {
+                return true;
+            }
+            else
+            {
+                exception = "Passwords are not equals";
+                return false;
+            }
+        }
+
     }
 }
