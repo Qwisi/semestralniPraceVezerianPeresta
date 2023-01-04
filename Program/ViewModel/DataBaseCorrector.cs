@@ -19,12 +19,11 @@ namespace Program.ViewModel
         {
             _con = new OracleConnection(constr);
             _con.Open();
-            string insertSql = "INSERT INTO USERS (id_user, user_name, password) VALUES (:val1, :val2, :val3)";
+            string insertSql = "INSERT INTO USERS (user_name, password) VALUES (:val1, :val2)";
             using (OracleCommand cmd = new OracleCommand(insertSql, _con))
             {
-                cmd.Parameters.Add(new OracleParameter(":val1", 1));
-                cmd.Parameters.Add(new OracleParameter(":val2", user.Email));
-                cmd.Parameters.Add(new OracleParameter(":val3", user.Password));
+                cmd.Parameters.Add(new OracleParameter(":val1", user.Email));
+                cmd.Parameters.Add(new OracleParameter(":val2", user.Password));
 
                 cmd.ExecuteNonQuery();
             }
